@@ -1,0 +1,16 @@
+# compiled output
+lib
+
+# dependencies
+node_modules
+
+# IDE - VSCode
+.vscode
+
+# misc
+npm-debug.log
+*.tgz
+
+# System Files
+.DS_Store
+Thumbs.db

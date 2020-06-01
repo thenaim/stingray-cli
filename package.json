@@ -1,0 +1,56 @@
+{
+  "name": "stingray-cli",
+  "version": "0.5.5",
+  "description": "The StingrayTV CLI is a command-line interface tool that you use to initialize, develop, scaffold, and maintain StingrayTV applications.",
+  "scripts": {
+    "build": "tsc -p .",
+    "refresh": "rm -rf ./node_modules ./package-lock.json && npm install"
+  },
+  "keywords": [
+    "StingrayTV",
+    "stingray",
+    "gs-group",
+    "cli"
+  ],
+  "author": "Naim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thenaim/stingray-cli/issues"
+  },
+  "homepage": "https://github.com/thenaim/stingray-cli#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thenaim/stingray-cli.git"
+  },
+  "bin": {
+    "stingray": "./lib/index.js"
+  },
+  "files": [
+    "lib"
+  ],
+  "preferGlobal": true,
+  "dependencies": {
+    "axios": "^0.19.2",
+    "chalk": "^4.0.0",
+    "clear": "^0.1.0",
+    "cli-table": "^0.3.1",
+    "commander": "^5.1.0",
+    "figlet": "^1.4.0",
+    "path": "^0.12.7",
+    "progress": "^2.0.3",
+    "sudo-prompt": "^9.2.1",
+    "tar": "^6.0.2"
+  },
+  "devDependencies": {
+    "@types/clear": "^0.1.0",
+    "@types/cli-table": "^0.3.0",
+    "@types/figlet": "^1.2.0",
+    "@types/node": "^14.0.5",
+    "@types/progress": "^2.0.3",
+    "@types/tar": "^4.0.3",
+    "nodemon": "^2.0.4",
+    "ts-node": "^8.10.2",
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.3"
+  }
+}
