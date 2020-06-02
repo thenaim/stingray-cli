@@ -21,6 +21,10 @@ The StingrayTV CLI is a command-line interface tool that you use to run, install
     <a href="https://github.com/thenaim/stingray-cli/commits/master" target="_blank">
     <img src="https://flat.badgen.net/github/last-commit/thenaim/stingray-cli">
   </a>
+    </a>
+    <a href="https://travis-ci.org/github/thenaim/stingray-cli" target="_blank">
+    <img src="https://travis-ci.org/thenaim/stingray-cli.svg?branch=master">
+  </a>
 </p>
 
 # Installation Guide
