@@ -128,8 +128,10 @@ program
       shell: true,
       cwd: helper.homedir,
     });
+    let isInstalled = true;
 
     ls.stdout.on("data", (data) => {
+      isInstalled = false;
       console.log(`${data}`);
     });
 
@@ -138,11 +140,7 @@ program
     });
 
     ls.on("close", async (code) => {
-      if (
-        await helper.existsAsync(
-          Path.join(helper.homedir, "./apps", `${dir}.pkg`)
-        )
-      ) {
+      if (isInstalled) {
         console.log(
           chalk.green(
             `${
