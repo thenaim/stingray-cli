@@ -22,7 +22,7 @@ const homedir = Path.join(os.homedir(), Config.cliDir);
  *
  * @return {Promise<boolean>}
  */
-function mrdirProjectInit(): Promise<boolean> {
+const mrdirProjectInit = async (): Promise<boolean> => {
   return new Promise<any>(async (resolve) => {
     if (!(await existsAsync(homedir))) {
       await mkdirAsync(homedir)
@@ -32,14 +32,14 @@ function mrdirProjectInit(): Promise<boolean> {
       resolve(true);
     }
   });
-}
+};
 
 /**
  * Extract example apps from archive
  *
  * @return {Promise<boolean>}
  */
-function extractApps(): Promise<boolean> {
+const extractApps = async (): Promise<boolean> => {
   return new Promise<any>(async (resolve, reject) => {
     await getInstalledApps().then(async (apps) => {
       if (!apps.length || !(await existsAsync(Path.join(homedir, "./apps")))) {
@@ -57,7 +57,7 @@ function extractApps(): Promise<boolean> {
       }
     });
   });
-}
+};
 
 /**
  * Check file exist
@@ -65,18 +65,18 @@ function extractApps(): Promise<boolean> {
  * @param {string} filePath
  * @return {Promise<boolean>}
  */
-function existsAsync(filePath: string): Promise<boolean> {
+const existsAsync = async (filePath: string): Promise<boolean> => {
   return new Promise((resolve) => {
     Fs.access(filePath, (err) => resolve(!err));
   });
-}
+};
 
 /**
  * Prompt the user for execute shell commands
  *
  * @return {Promise<boolean>}
  */
-function trySudoPrompt(): Promise<boolean> {
+const trySudoPrompt = async (): Promise<boolean> => {
   return new Promise((resolve) => {
     sudoPrompt.exec(
       "echo stingray-cli",
@@ -92,33 +92,33 @@ function trySudoPrompt(): Promise<boolean> {
       }
     );
   });
-}
+};
 
 /**
  * Check docker install
  *
  * @return {Promise<boolean>}
  */
-function checkDockerAsync(): Promise<boolean> {
+const checkDockerAsync = async (): Promise<boolean> => {
   return new Promise(async (resolve) => {
     await execureAsync("docker -v")
       .then(() => resolve(true))
       .catch(() => resolve(false));
   });
-}
+};
 
 /**
  * Get installed apps
  *
  * @return {Promise<string[]>}
  */
-function getInstalledApps(): Promise<string[]> {
+const getInstalledApps = async (): Promise<string[]> => {
   return new Promise(async (resolve) => {
     await readdirAsync(Path.join(homedir, "./apps"))
       .then((files) => resolve(files))
       .catch(() => resolve([]));
   });
-}
+};
 
 /**
  * Join paths
@@ -127,9 +127,9 @@ function getInstalledApps(): Promise<string[]> {
  * @param {string} second
  * @return {string}
  */
-function pathJoin(first: string, second: string): string {
+const pathJoin = (first: string, second: string): string => {
   return Path.join(first, second);
-}
+};
 
 export const helper = {
   promisify,

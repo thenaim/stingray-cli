@@ -68,7 +68,7 @@ program
     "--anumber, --audiodevice_number <audiodevice_number>",
     "The audiodevice number format to run emulator."
   )
-  .action(async function (options: any) {
+  .action(async (options: any) => {
     if (!(await helper.checkDockerAsync())) {
       return console.log("Docker is not installed");
     }
@@ -106,7 +106,7 @@ program
   .command("install [dir]")
   .alias("i")
   .description("Install app to emulator.")
-  .action(async function (dir: string) {
+  .action(async (dir: string) => {
     if (!(await helper.checkDockerAsync())) {
       return console.log("Docker is not installed");
     }
