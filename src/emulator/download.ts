@@ -6,6 +6,7 @@ import ProgressBar from "progress";
 import Path from "path";
 import { helper } from "../helper";
 import { DownloadInitInterface } from "../interfaces";
+import https from 'https';
 
 interface StingrayTVFetcherOptions {
   url: string;
@@ -97,6 +98,9 @@ export class StingrayTVFetcher {
         },
         method: "GET",
         responseType: "stream",
+        httpsAgent: new https.Agent({
+          rejectUnauthorized: false
+        }),
         timeout: 10000,
       })
         .then((body) => {

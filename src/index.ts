@@ -21,7 +21,6 @@ process.on("uncaughtException", (err) =>
 process.on("unhandledRejection", (err, promise) =>
   console.log(`unhandledRejection: ${err}`, err, promise)
 );
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 program
   .command("init")
@@ -144,7 +143,7 @@ program
         console.log(
           chalk.green(
             `${
-              dir ? dir.split("/").pop() : userAppPath.split("/").pop()
+            dir ? dir.split("/").pop() : userAppPath.split("/").pop()
             } installed successfully.`
           )
         );
