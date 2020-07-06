@@ -1,6 +1,6 @@
 {
   "name": "stingray-cli",
-  "version": "0.5.5",
+  "version": "1.0.0",
   "description": "The StingrayTV CLI is a command-line interface tool that you use to initialize, develop, scaffold, and maintain StingrayTV applications.",
   "scripts": {
     "build": "tsc -p .",
