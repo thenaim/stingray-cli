@@ -30,7 +30,7 @@
   ],
   "preferGlobal": true,
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.0",
     "chalk": "^4.0.0",
     "clear": "^0.1.0",
     "cli-table": "^0.3.1",
